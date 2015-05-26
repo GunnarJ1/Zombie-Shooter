@@ -1,6 +1,5 @@
 package com.gunnar.smallgame.objects;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
@@ -98,22 +97,18 @@ public class BasicZombieObject extends GameObject {
 		
 		if (player.getHealth() >= 1) { 
 		
-			if (x < player.getX()) {
+			if (x <= player.getX()) {
 				setVelX(speed);
 				direction = 1;
-			}
-		
-			if (x > player.getX()) {
+			}else if (x >= player.getX()) {
 				setVelX(-speed);
 				direction = 3;
 			}
 		
-			if (y < player.getY()) {
+			if (y <= player.getY()) {
 				setVelY(speed);
 				direction = 2;
-			}
-		
-			if (y > player.getY()) {
+			}else if (y >= player.getY()) {
 				setVelY(-speed);
 				direction = 0;
 			}

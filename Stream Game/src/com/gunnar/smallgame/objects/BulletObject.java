@@ -12,6 +12,9 @@ public class BulletObject extends GameObject {
 	private int x, y, direction;
 	private GameObjectManager gom;
 	
+	private int timer;
+	private final int life = 40;
+	
 	public BulletObject(int x, int y, int direction, GameObjectManager gom) {
 		super(x, y, ID.Bullet);
 		this.x = x;
@@ -49,6 +52,11 @@ public class BulletObject extends GameObject {
 		
 		if (isOutside())
 			gom.removeObject(this);
+		
+		if (timer >= life)
+			gom.removeObject(this);
+		
+		timer++;
 		
 	}
 	

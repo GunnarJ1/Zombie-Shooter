@@ -2,7 +2,9 @@ package com.gunnar.smallgame.objects;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
+import com.gunnar.smallgame.Game;
 import com.gunnar.smallgame.utils.GameObject;
 import com.gunnar.smallgame.utils.GameObjectManager;
 
@@ -17,6 +19,7 @@ public class BasicZombieObject extends GameObject {
 	
 	private int x, y;
 	
+	private Random random;
 	private PlayerObject player;
 	private GameObjectManager om;
 	
@@ -26,6 +29,8 @@ public class BasicZombieObject extends GameObject {
 		this.y = y;
 		this.player = player;
 		this.om = om;
+	
+		checkSpawn();
 	}
 	
 	public void tick() {
@@ -91,6 +96,27 @@ public class BasicZombieObject extends GameObject {
 			}
 		
 		}
-	
 	}
+	
+	private void checkSpawn() {
+		if (this.getRectangle().intersects(player.getRectangle())) {
+			resetCoords();
+		}
+		
+		if (x >= (player.getX() + 128) && x <= (player.getX() - 128)) {
+			resetCoords();
+		}
+		
+		if (y >= (player.getY() + 128) && y <= (player.getY() - 128)) {
+			resetCoords();
+		}
+		
+	}
+	
+	private void resetCoords() {
+		System.out.println("Just reset the coords");
+		setX(random.nextInt(Game.GameWidth));
+		setY(random.nextInt(Game.GameHeight));
+	}
+	
 }

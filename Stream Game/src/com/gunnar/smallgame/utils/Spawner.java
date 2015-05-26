@@ -16,7 +16,7 @@ public class Spawner {
 	
 	private int spawnTimer = 0;
 	private int spawnTimerMax = 30;
-	
+	 
 	private int startSpawnerTime = 0;
 	private int startSpawnerTimerMax = 200;
 	

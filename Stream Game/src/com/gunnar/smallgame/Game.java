@@ -39,6 +39,7 @@ public class Game {
 	
 	//Sheets
 		SpriteSheet playerSheet;
+		SpriteSheet zombieSheet;
 		SpriteSheet hudIcon;
 		SpriteSheet backgroundIcon;
 	//Entities
@@ -77,6 +78,7 @@ public class Game {
 		
 		//Sheets
 			playerSheet = new SpriteSheet("assets/playerSpriteSheet", 32, 32);
+			zombieSheet = new SpriteSheet("assets/zombieSpriteSheet", 32, 32);
 			hudIcon = new SpriteSheet("assets/hud", 1080, 100);
 			backgroundIcon = new SpriteSheet("assets/background", 1080, 620);
 		
@@ -88,10 +90,10 @@ public class Game {
 			
 			handler.addObject(player);
 			for (int i = 0; i <= 5; i++)
-				handler.addObject(new BasicZombieObject(random.nextInt(1080), random.nextInt(600-50), player, handler));
+				handler.addObject(new BasicZombieObject(random.nextInt(1080), random.nextInt(600-50), zombieSheet,player, handler));
 			
 				hud = new HudObject(hudIcon.getSprite(1, 1), player);
-			spawn = new Spawner(handler,player);
+			spawn = new Spawner(handler, zombieSheet, player);
 		
 		//For all our graphics drawing needs :P
 			i = new BufferedImage(GameWidth, GameHeight, BufferedImage.TYPE_INT_RGB);

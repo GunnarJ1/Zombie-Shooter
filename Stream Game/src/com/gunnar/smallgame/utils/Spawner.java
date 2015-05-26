@@ -19,17 +19,19 @@ public class Spawner {
 	 
 	private int startSpawnerTime = 0;
 	private int startSpawnerTimerMax = 200;
+	private SpriteSheet zombieSpriteSheet;
 	
-	public Spawner(GameObjectManager gom, PlayerObject player) {
+	public Spawner(GameObjectManager gom, SpriteSheet zombieSpriteSheet,PlayerObject player) {
 		this.gom = gom;
 		this.player = player;
+		this.zombieSpriteSheet = zombieSpriteSheet;
 		random = new Random();
 	}
 	
 	public void tick() {
 
 		if (spawnTimer >= spawnTimerMax) {
-			spawnObject(new BasicZombieObject(random.nextInt(Game.GameWidth), random.nextInt(Game.GameHeight), player, gom));
+			spawnObject(new BasicZombieObject(random.nextInt(Game.GameWidth), random.nextInt(Game.GameHeight), zombieSpriteSheet, player, gom));
 			spawnTimer = 0;
 		}
 		

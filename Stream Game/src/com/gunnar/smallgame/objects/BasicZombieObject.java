@@ -63,6 +63,7 @@ public class BasicZombieObject extends GameObject {
 			if (temp.getId() == ID.Bullet) {
 				if (this.getRectangle().intersects(temp.getRectangle())) {
 					om.removeObject(temp);
+					player.setScore(player.getScore() + 10);
 					om.removeObject(this);
 				}
 			}

@@ -25,12 +25,13 @@ public class PlayerObject extends GameObject{
 	
 	private int playerState = 1;
 	private int health = 100;
+	private int score = 0;
 	
 	private int shootTimer = 0;
 	private int shootTimerMax = 7;
 	private boolean canShoot = true;
 	
-	private boolean isImmortal = false;
+	private boolean isImmortal = true;
 	
 	public PlayerObject(InputHandler inputHandler, int x, int y, SpriteSheet ss, GameObjectManager om) {
 		super(x, y, ID.Player);
@@ -105,8 +106,16 @@ public class PlayerObject extends GameObject{
 		return health;
 	}
 	
+	public int getScore() {
+		return this.score;
+	}
+	
 	public void setHealth(int h) {
 		this.health = h;
+	}
+	
+	public void setScore(int s) {
+		this.score = s;
 	}
 	
 	private void checkInput() {

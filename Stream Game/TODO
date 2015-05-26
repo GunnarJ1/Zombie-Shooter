@@ -1,4 +1,17 @@
 FIX: ZOMBIE JITTER
-ADD: FPS COUNTER
+ADD: FPS COUNTER (for debugging)
 ADD: ENEMY COUNTER
-ADD: ENTITY COUNTER
+ADD: ENTITY COUNTER (for debugging)
+ADD: REGEN OF HEALTH (spawning hearts around the room)
+ADD: LIMITED AMMO
+ADD: AMMO CRATES (spawning added ammo around the room)
+ADD: GAME CONSOLE (not the java one :P)
+ADD: SOUNDS (music and gun fire noise)
+
+--Low priority
+
+ADD: OTHER ZOMBIES
+ADD: OTHER WEAPENS
+ADD: MENU
+ADD: SPLASHSCREEN
+ADD: HIGH SCORE

@@ -152,7 +152,7 @@ public class PlayerObject extends GameObject{
 		
 		if (input.isKeyDown(KeyEvent.VK_SPACE)) {
 			if (canShoot && health >= 1) {
-				om.addObject(new BulletObject(x+16, y+16, playerState));
+				om.addObject(new BulletObject(x+16, y+16, playerState, om));
 				canShoot = false;
 			}
 		

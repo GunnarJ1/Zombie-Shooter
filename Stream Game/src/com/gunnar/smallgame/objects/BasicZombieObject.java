@@ -16,7 +16,6 @@ public class BasicZombieObject extends GameObject {
 	 */
 	
 	private int x, y;
-	private boolean isAlive;
 	
 	private PlayerObject player;
 	private GameObjectManager om;
@@ -27,8 +26,6 @@ public class BasicZombieObject extends GameObject {
 		this.y = y;
 		this.player = player;
 		this.om = om;
-		
-		isAlive = true;
 	}
 	
 	public void tick() {
@@ -42,22 +39,11 @@ public class BasicZombieObject extends GameObject {
 	}
 	
 	public void render(Graphics g) {
-		if(isAlive == true) {
-			g.setColor(Color.red);
-			g.fillRect(x, y, 32, 32);
-		}
-	}
-	
-	public boolean isAlive() {
-		return isAlive;
+		g.setColor(Color.red);
+		g.fillRect(x, y, 32, 32);
 	}
 	
 	private void collide() {
-		//Collsion with objects
-		/* 
-		 *THIS IS A WIP 
-		 */
-		
 		for (int i = 0; i < om.object.size(); i++) {
 			GameObject temp = om.object.get(i);
 			if (temp.getId() == ID.Bullet) {

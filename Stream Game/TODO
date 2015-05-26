@@ -1,4 +1,8 @@
 FIX: ZOMBIE JITTER
+FIX: ZOMBIE AI
+FIX: UGLY LOOKING HUD
+FIX: ONE MAIN SPRITE SHEET (instead like one billion)
+
 ADD: FPS COUNTER (for debugging)
 ADD: ENEMY COUNTER
 ADD: ENTITY COUNTER (for debugging)
@@ -7,6 +11,7 @@ ADD: LIMITED AMMO
 ADD: AMMO CRATES (spawning added ammo around the room)
 ADD: GAME CONSOLE (not the java one :P)
 ADD: SOUNDS (music and gun fire noise)
+ADD: WALLS
 
 --Low priority
 
@@ -15,3 +20,4 @@ ADD: OTHER WEAPENS
 ADD: MENU
 ADD: SPLASHSCREEN
 ADD: HIGH SCORE
+ADD: MULTI THREADING SUPPORT (really not needed for this kind of game, but who cares! MORE FRAMES!)

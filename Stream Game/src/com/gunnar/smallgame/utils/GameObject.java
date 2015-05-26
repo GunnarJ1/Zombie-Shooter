@@ -10,13 +10,16 @@ public abstract class GameObject {
 	private int x, y;
 	private int velx, vely;
 	private ID id;
-	private Rectangle rec;
 	
+	private Rectangle rec;
+	private int width, height;
 	
 	public GameObject(int x, int y, ID id) { 
 		this.x = x;
 		this.y = y;
 		this.id = id;
+		this.width = 32;
+		this.height = 32;
 	}
 	
 	public abstract void tick();
@@ -42,8 +45,16 @@ public abstract class GameObject {
 		return vely;
 	}
 	
+	public int getWidth() {
+		return width;
+	}
+	
+	public int getHieght() {
+		return height;
+	}
+	
 	public Rectangle getRectangle() {
-		rec = new Rectangle(x, y, 32, 32);
+		rec = new Rectangle(x, y, width, height);
 		return rec;
 	}
 	
@@ -61,5 +72,13 @@ public abstract class GameObject {
 	
 	public void setVelY(int velx) {
 		this.vely = velx;
+	}
+	
+	public void setWidth(int w) {
+		this.width = w;
+	}
+	
+	public void setHieght(int h) {
+		this.height = h;
 	}
 }

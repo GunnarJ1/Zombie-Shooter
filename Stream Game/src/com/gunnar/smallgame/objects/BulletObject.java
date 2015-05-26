@@ -18,11 +18,12 @@ public class BulletObject extends GameObject {
 		this.y = y;
 		this.direction = direction;
 		this.gom = gom;
+		
+		setWidth(8);
+		setHieght(8);
 	}
 	
 	public void tick() {
-		
-		//System.out.println( x+","+y );
 		
 		x += getVelx();
 		y += getVely();

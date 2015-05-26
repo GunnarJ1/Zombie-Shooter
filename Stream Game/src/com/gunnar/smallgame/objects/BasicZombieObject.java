@@ -29,7 +29,7 @@ public class BasicZombieObject extends GameObject {
 		this.y = y;
 		this.player = player;
 		this.om = om;
-	
+		random = new Random();
 		checkSpawn();
 	}
 	

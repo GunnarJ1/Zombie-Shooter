@@ -28,7 +28,7 @@ public class PlayerObject extends GameObject{
 	private int score = 0;
 	
 	private int shootTimer = 0;
-	private int shootTimerMax = 7;
+	private int shootTimerMax = 15;
 	private boolean canShoot = true;
 	
 	private boolean isImmortal = true;
